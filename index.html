@@ -203,214 +203,373 @@
     .floating-word:hover {
       opacity: 0.1 !important
     }
-
-    /* ═══════════════════════════════════════
+/* ═══════════════════════════════════════
    NAVBAR
 ═══════════════════════════════════════ */
-    #nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      height: 64px;
-      background: rgba(248, 250, 252, 0);
-      backdrop-filter: blur(0);
-      border-bottom: 1px solid transparent;
-      transition: background .35s, backdrop-filter .35s, border-color .35s;
-    }
 
-    #nav.solid {
-      background: rgba(248, 250, 252, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom-color: rgba(15, 23, 42, 0.07);
-    }
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    .nw {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 44px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  z-index: 1000;
 
-    /* Logo */
-    .logo {
-      font-family: var(--fd);
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--t1);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: -.02em;
-    }
+  height: 64px;
 
-    .ldot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--purple);
-      box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
-      animation: lp 2.5s ease-in-out infinite;
-    }
+  background: rgba(248, 250, 252, 0);
 
-    @keyframes lp {
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
 
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1)
-      }
+  border-bottom: 1px solid transparent;
 
-      50% {
-        opacity: .3;
-        transform: scale(.65)
-      }
-    }
+  transition:
+    background .35s ease,
+    backdrop-filter .35s ease,
+    border-color .35s ease;
+}
 
-    /* Nav links */
-    .nlinks {
-      display: flex;
-      align-items: center;
-      gap: 2px
-    }
+#nav.solid {
+  background: rgba(248, 250, 252, 0.92);
 
-    .nl {
-      font-family: var(--fm);
-      font-size: 11px;
-      color: var(--t3);
-      text-decoration: none;
-      padding: 7px 11px;
-      border-radius: 6px;
-      transition: color .2s, background .2s;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
-    .ni {
-      color: var(--purple);
-      font-size: 9px
-    }
+  border-bottom-color: rgba(15, 23, 42, 0.07);
+}
 
-    .nl:hover,
-    .nl.on {
-      color: var(--t1);
-      background: var(--pur-lt)
-    }
+.nw {
+  max-width: 1100px;
 
-    .nl.on {
-      color: var(--purple)
-    }
+  margin: 0 auto;
 
-    .ncv {
-      font-family: var(--fm);
-      font-size: 11px;
-      color: var(--purple);
-      text-decoration: none;
-      border: 1px solid var(--pur-b);
-      padding: 7px 16px;
-      border-radius: 6px;
-      margin-left: 10px;
-      transition: background .2s, box-shadow .2s;
-    }
+  padding: 0 44px;
 
-    .ncv:hover {
-      background: var(--pur-lt);
-      box-shadow: 0 0 16px rgba(124, 58, 237, .15)
-    }
+  height: 100%;
 
-    /* Hamburger — unique style */
-    .hbg {
-      display: none;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 6px;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0;
-      position: relative;
-      width: 32px;
-      height: 32px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .hbg-line {
-      position: absolute;
-      left: 5px;
-      height: 1.5px;
-      background: var(--t2);
-      border-radius: 2px;
-      transition: all .32s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+/* ═══════════════════════════════════════
+   LOGO
+═══════════════════════════════════════ */
 
-    .hbg-line:nth-child(1) {
-      width: 22px;
-      top: 9px
-    }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-    .hbg-line:nth-child(2) {
-      width: 14px;
-      top: 15px;
-      background: var(--purple)
-    }
+  text-decoration: none;
 
-    .hbg-line:nth-child(3) {
-      width: 22px;
-      top: 21px
-    }
+  font-family: var(--fd);
+  font-size: 18px;
+  font-weight: 700;
 
-    .hbg.open .hbg-line:nth-child(1) {
-      transform: rotate(45deg) translate(4px, 4px)
-    }
+  color: var(--t1);
 
-    .hbg.open .hbg-line:nth-child(2) {
-      opacity: 0;
-      transform: translateX(8px)
-    }
+  letter-spacing: -.02em;
+}
 
-    .hbg.open .hbg-line:nth-child(3) {
-      transform: rotate(-45deg) translate(4px, -4px)
-    }
+.ldot {
+  width: 7px;
+  height: 7px;
 
-    @media(max-width:768px) {
-      .nw {
-        padding: 0 20px
-      }
+  border-radius: 50%;
 
-      .nlinks {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
-        background: rgba(248, 250, 252, 0.97);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--cb);
-        padding: 14px 20px 20px;
-      }
+  background: var(--purple);
 
-      .nlinks.open {
-        display: flex
-      }
+  box-shadow:
+    0 0 8px rgba(124, 58, 237, 0.5);
 
-      .ncv {
-        margin-left: 0;
-        margin-top: 6px
-      }
+  animation: lp 2.5s ease-in-out infinite;
+}
 
-      .hbg {
-        display: flex
-      }
-    }
+@keyframes lp {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .3;
+    transform: scale(.65);
+  }
+}
+
+/* ═══════════════════════════════════════
+   NAV LINKS
+═══════════════════════════════════════ */
+
+.nlinks {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+/* Individual Link */
+
+.nl {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 9px 13px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-family: var(--fm);
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: .03em;
+
+  color: var(--t3);
+
+  transition:
+    color .25s ease,
+    background .25s ease,
+    transform .2s ease;
+}
+
+/* Section Number */
+
+.ni {
+  color: var(--purple);
+
+  font-size: 9px;
+
+  opacity: .9;
+}
+
+/* Hover + Active */
+
+.nl:hover,
+.nl.on {
+  color: var(--t1);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(124, 58, 237, 0.07),
+      rgba(124, 58, 237, 0.04)
+    );
+
+  transform: translateY(-1px);
+}
+
+/* Active State */
+
+.nl.on {
+  color: var(--purple);
+
+  box-shadow:
+    inset 0 0 0 1px rgba(124, 58, 237, 0.08);
+}
+
+/* ═══════════════════════════════════════
+   CV BUTTON
+═══════════════════════════════════════ */
+
+.ncv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 12px;
+
+  padding: 9px 18px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-family: var(--fm);
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: .04em;
+
+  color: var(--purple);
+
+  border: 1px solid var(--pur-b);
+
+  transition:
+    background .25s ease,
+    box-shadow .25s ease,
+    transform .2s ease;
+}
+
+.ncv:hover {
+  background: var(--pur-lt);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 24px rgba(124, 58, 237, .12);
+}
+
+/* ═══════════════════════════════════════
+   HAMBURGER
+═══════════════════════════════════════ */
+
+.hbg {
+  display: none;
+
+  cursor: pointer;
+
+  background: none;
+  border: none;
+
+  padding: 6px;
+
+  position: relative;
+
+  width: 32px;
+  height: 32px;
+}
+
+.hbg-line {
+  position: absolute;
+
+  left: 5px;
+
+  height: 1.5px;
+
+  background: var(--t2);
+
+  border-radius: 2px;
+
+  transition:
+    transform .32s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity .25s ease,
+    width .25s ease;
+}
+
+.hbg-line:nth-child(1) {
+  width: 22px;
+  top: 9px;
+}
+
+.hbg-line:nth-child(2) {
+  width: 14px;
+  top: 15px;
+
+  background: var(--purple);
+}
+
+.hbg-line:nth-child(3) {
+  width: 22px;
+  top: 21px;
+}
+
+/* Open Animation */
+
+.hbg.open .hbg-line:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hbg.open .hbg-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(8px);
+}
+
+.hbg.open .hbg-line:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ═══════════════════════════════════════
+   MOBILE NAV
+═══════════════════════════════════════ */
+
+@media(max-width:768px) {
+
+  .nw {
+    padding: 0 20px;
+  }
+
+  .nlinks {
+    display: none;
+
+    position: absolute;
+
+    top: 64px;
+    left: 16px;
+    right: 16px;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 6px;
+
+    padding: 18px;
+
+    background:
+      rgba(248, 250, 252, 0.92);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+      1px solid rgba(15, 23, 42, 0.06);
+
+    border-radius: 16px;
+
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, .08);
+
+    animation: navDrop .25s ease;
+  }
+
+  .nlinks.open {
+    display: flex;
+  }
+
+  .nl {
+    width: 100%;
+
+    justify-content: flex-start;
+
+    padding: 12px 14px;
+  }
+
+  .ncv {
+    margin-left: 0;
+    margin-top: 8px;
+
+    width: 100%;
+  }
+
+  .hbg {
+    display: flex;
+  }
+}
+
+/* ═══════════════════════════════════════
+   MOBILE NAV ANIMATION
+═══════════════════════════════════════ */
+
+@keyframes navDrop {
+
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
     /* ═══════════════════════════════════════
    PAGE LAYOUT
@@ -491,7 +650,7 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       border-color: var(--purple);
       box-shadow: 0 20px 40px rgba(0, 0, 0, .06), 0 0 0 1px rgba(124, 58, 237, .08);
     }
@@ -1331,8 +1490,10 @@
   text-decoration: none;
 
   overflow: hidden;
-}
 
+  position: relative;
+  isolation: isolate;
+}
 /* ───────────────
    Article Image
 ──────────────── */
@@ -1351,6 +1512,11 @@
   border-bottom: 1px solid var(--cb);
 
   background: #111;
+}
+@media(max-width: 768px) {
+  .wimg {
+    height: 180px;
+  }
 }
 
 .wimg img {
@@ -1418,6 +1584,7 @@
 
 .card:hover .wtitle {
   color: var(--purple);
+  word-break: break-word;
 }
 
 /* ───────────────
@@ -1436,6 +1603,95 @@
   -webkit-box-orient: vertical;
 
   overflow: hidden;
+}
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+
+.cgrid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 14px;
+
+  width: 100%;
+  max-width: 900px;
+}
+
+.cc {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px;
+
+  background: var(--card);
+
+  border: 1px solid var(--cb);
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: var(--t1);
+
+  transition:
+    border-color .3s,
+    transform .2s,
+    box-shadow .2s;
+
+  min-height: 82px;
+}
+
+.cc:hover {
+  border-color: var(--purple);
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, .06),
+    0 0 0 1px rgba(124, 58, 237, .08);
+}
+
+.ci {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--pur-lt);
+
+  border-radius: 10px;
+
+  color: var(--purple);
+
+  flex-shrink: 0;
+}
+
+.clbl {
+  font-family: var(--fm);
+  font-size: 9px;
+
+  color: var(--t3);
+
+  letter-spacing: .12em;
+  text-transform: uppercase;
+
+  margin-bottom: 4px;
+}
+
+.cval {
+  font-size: 13.5px;
+  font-weight: 500;
+
+  color: var(--t1);
+
+  line-height: 1.5;
+
+  word-break: break-word;
 }
 
 /* ───────────────
@@ -1766,7 +2022,7 @@
         link: "https://github.com/prosunkdatta/solar-resilience-piml-sylhet"
       },
       projects: [
-        { title: "splar-resilience-piml-sylhet", desc: "Physics-Informed ML framework for predicting and optimizing solar microgrid performance in healthcare facilities. Embeds solar irradiance physics as hard constraints in the learning objective to improve reliability during monsoon conditions.", tech: ["Python", "PyTorch", "PVLib", "NumPy", "Matplotlib"], link: "https://github.com/prosunkdatta/solar-resilience-piml-sylhet", live: true },
+        { title: "solar-resilience-piml-sylhet", desc: "Physics-Informed ML framework for predicting and optimizing solar microgrid performance in healthcare facilities. Embeds solar irradiance physics as hard constraints in the learning objective to improve reliability during monsoon conditions.", tech: ["Python", "PyTorch", "PVLib", "NumPy", "Matplotlib"], link: "https://github.com/prosunkdatta/solar-resilience-piml-sylhet", live: true },
         { title: "Stochastic-Physics-Sim", desc: "Monte Carlo simulation of radioactive decay. Reproduced theoretical half-life with 98%+ accuracy, demonstrating how deterministic macroscopic laws emerge from independent microscopic probabilistic events.", tech: ["Python", "NumPy", "SciPy", "Matplotlib", "Linux/Bash"], link: "https://github.com/prosunkdatta/Stochastic-Physics-Sim", live: false }
       ],
       skills: [
@@ -1794,7 +2050,7 @@
       ],
       writing: [{
   title: "Gravity, Gradients, and the 2 AM Ghost: Why the Best AI Engineers Stop Coding and Start Seeing",
-  image: "images/article(1).webp",
+  image: "./assets/articles/gravity-gradients.jpg",
   tags: ["Physics", "Machine Learning", "Essay"],
   summary:"On the moment I stopped treating the loss curve as an optimization problem and started seeing the physics inside it — what physical intuition gives you that pure backpropagation cannot.",
   date: "March 2026",
@@ -1803,7 +2059,7 @@
 },
 {
   title: "You’re Not Researching. You’re Hiding.",
-  image: "images/article(2).webp",
+  image: "./assets/articles/gravity-gradients.jpg",
   tags: ["Physics", "Machine Learning", "Research", "Essay"],
   summary: "A raw reflection on ambition, procrastination, and the fear of being ordinary. Through the story of a teenager obsessed with physics-informed machine learning, this essay explores how endless learning can become a way of avoiding the difficult reality of actually building something.",
   date: "May 2026", 
