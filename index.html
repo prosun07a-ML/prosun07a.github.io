@@ -13,11 +13,11 @@
     content="Prosun Datta, Prosun Kanti Datta, Founder, Computational Programmer, PIML Researcher, Physics-Informed Machine Learning, Dynexly, Computational Physics, Sylhet Bangladesh">
   <meta name="author" content="Prosun Datta">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://prosunkdatta.github.io/">  <!-- ═══ Most Important Change this line to:  <link rel="canonical" href="https://www.yournewdomain.com/"> ═══ -->
+  <link rel="canonical" href="https://prosunkdatta.github.io/">
 
   <!-- ═══ SEO: Open Graph ═══ -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://prosunkdatta.github.io/">    <!-- ═══ Most Important Change this line to:  <link rel="canonical" href="https://www.yournewdomain.com/"> ═══ -->
+  <meta property="og:url" content="https://prosunkdatta.github.io/">
   <meta property="og:title" content="Prosun Datta | PIML Researcher & Computational Researcher">
   <meta property="og:description" content="Bridging the gap between Physics-Informed Machine Learning and real-world energy resilience.">
   <meta property="og:image" content="images/profile.webp">
@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="images/profile.webp">
   <link rel="preload" as="image" href="images/profile.webp">
 
-  <!-- ═══ SEO: JSON-LD (Chnage the "url" when you buy domain) Structured Data ═══ -->
+  <!-- ═══ SEO: JSON-LD Structured Data ═══ -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -88,7 +88,7 @@
 
   <style>
     /* ═══════════════════════════════════════
-   TOKENS — original white/purple palette
+   TOKENS — refined professional palette
 ═══════════════════════════════════════ */
     :root {
       --bg: #f8fafc;
@@ -134,12 +134,12 @@
     }
 
     ::selection {
-      background: #ffffff;
-      color: #000000
+      background: #7c3aed;
+      color: #ffffff
     }
 
     /* ═══════════════════════════════════════
-   SCROLLBAR — original
+   SCROLLBAR — refined
 ═══════════════════════════════════════ */
     ::-webkit-scrollbar {
       width: 6px
@@ -150,12 +150,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #e2e8f0;
+      background: #cbd5e1;
       border-radius: 3px
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #cbd5e1
+      background: #94a3b8
     }
 
     /* ═══════════════════════════════════════
@@ -174,402 +174,203 @@
     }
 
     /* ═══════════════════════════════════════
-   FLOATING WORDS BACKGROUND — original
-═══════════════════════════════════════ */
-    #canvas-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .floating-word {
-      position: absolute;
-      color: var(--t1);
-      opacity: 0.03;
-      font-family: var(--fb);
-      font-weight: 400;
-      white-space: nowrap;
-      user-select: none;
-      pointer-events: auto;
-      cursor: default;
-      filter: blur(1.5px);
-      transition: opacity .3s ease;
-    }
-
-    .floating-word:hover {
-      opacity: 0.1 !important
-    }
-/* ═══════════════════════════════════════
    NAVBAR
 ═══════════════════════════════════════ */
 
-#nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 64px;
+      background: rgba(248, 250, 252, 0);
+      backdrop-filter: blur(0);
+      -webkit-backdrop-filter: blur(0);
+      border-bottom: 1px solid transparent;
+      transition: background .35s ease, backdrop-filter .35s ease, border-color .35s ease;
+    }
 
-  z-index: 1000;
+    #nav.solid {
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(15, 23, 42, 0.07);
+    }
 
-  height: 64px;
+    .nw {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 44px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  background: rgba(248, 250, 252, 0);
-
-  backdrop-filter: blur(0);
-  -webkit-backdrop-filter: blur(0);
-
-  border-bottom: 1px solid transparent;
-
-  transition:
-    background .35s ease,
-    backdrop-filter .35s ease,
-    border-color .35s ease;
-}
-
-#nav.solid {
-  background: rgba(248, 250, 252, 0.92);
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  border-bottom-color: rgba(15, 23, 42, 0.07);
-}
-
-.nw {
-  max-width: 1100px;
-
-  margin: 0 auto;
-
-  padding: 0 44px;
-
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* ═══════════════════════════════════════
+    /* ═══════════════════════════════════════
    LOGO
 ═══════════════════════════════════════ */
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-family: var(--fd);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--t1);
+      letter-spacing: -.02em;
+    }
 
-  text-decoration: none;
+    .ldot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--purple);
+      box-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+      animation: lp 2.5s ease-in-out infinite;
+    }
 
-  font-family: var(--fd);
-  font-size: 18px;
-  font-weight: 700;
+    @keyframes lp {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .3; transform: scale(.65); }
+    }
 
-  color: var(--t1);
-
-  letter-spacing: -.02em;
-}
-
-.ldot {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: var(--purple);
-
-  box-shadow:
-    0 0 8px rgba(124, 58, 237, 0.5);
-
-  animation: lp 2.5s ease-in-out infinite;
-}
-
-@keyframes lp {
-
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: .3;
-    transform: scale(.65);
-  }
-}
-
-/* ═══════════════════════════════════════
+    /* ═══════════════════════════════════════
    NAV LINKS
 ═══════════════════════════════════════ */
 
-.nlinks {
-  display: flex;
-  align-items: center;
+    .nlinks {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
-  gap: 4px;
-}
+    .nl {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 9px 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--fm);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .03em;
+      color: var(--t3);
+      transition: color .25s ease, background .25s ease, transform .2s ease;
+    }
 
-/* Individual Link */
+    .ni {
+      color: var(--purple);
+      font-size: 9px;
+      opacity: .9;
+    }
 
-.nl {
-  position: relative;
+    .nl:hover,
+    .nl.on {
+      color: var(--t1);
+      background: linear-gradient(180deg, rgba(124, 58, 237, 0.07), rgba(124, 58, 237, 0.04));
+      transform: translateY(-1px);
+    }
 
-  display: flex;
-  align-items: center;
-  gap: 5px;
+    .nl.on {
+      color: var(--purple);
+      box-shadow: inset 0 0 0 1px rgba(124, 58, 237, 0.08);
+    }
 
-  padding: 9px 13px;
-
-  border-radius: 8px;
-
-  text-decoration: none;
-
-  font-family: var(--fm);
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: .03em;
-
-  color: var(--t3);
-
-  transition:
-    color .25s ease,
-    background .25s ease,
-    transform .2s ease;
-}
-
-/* Section Number */
-
-.ni {
-  color: var(--purple);
-
-  font-size: 9px;
-
-  opacity: .9;
-}
-
-/* Hover + Active */
-
-.nl:hover,
-.nl.on {
-  color: var(--t1);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(124, 58, 237, 0.07),
-      rgba(124, 58, 237, 0.04)
-    );
-
-  transform: translateY(-1px);
-}
-
-/* Active State */
-
-.nl.on {
-  color: var(--purple);
-
-  box-shadow:
-    inset 0 0 0 1px rgba(124, 58, 237, 0.08);
-}
-
-/* ═══════════════════════════════════════
+    /* ═══════════════════════════════════════
    CV BUTTON
 ═══════════════════════════════════════ */
 
-.ncv {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    .ncv {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 12px;
+      padding: 9px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: var(--fm);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      color: var(--purple);
+      border: 1px solid var(--pur-b);
+      transition: background .25s ease, box-shadow .25s ease, transform .2s ease;
+    }
 
-  margin-left: 12px;
+    .ncv:hover {
+      background: var(--pur-lt);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(124, 58, 237, .12);
+    }
 
-  padding: 9px 18px;
-
-  border-radius: 8px;
-
-  text-decoration: none;
-
-  font-family: var(--fm);
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: .04em;
-
-  color: var(--purple);
-
-  border: 1px solid var(--pur-b);
-
-  transition:
-    background .25s ease,
-    box-shadow .25s ease,
-    transform .2s ease;
-}
-
-.ncv:hover {
-  background: var(--pur-lt);
-
-  transform: translateY(-1px);
-
-  box-shadow:
-    0 8px 24px rgba(124, 58, 237, .12);
-}
-
-/* ═══════════════════════════════════════
+    /* ═══════════════════════════════════════
    HAMBURGER
 ═══════════════════════════════════════ */
 
-.hbg {
-  display: none;
+    .hbg {
+      display: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+      position: relative;
+      width: 32px;
+      height: 32px;
+    }
 
-  cursor: pointer;
+    .hbg-line {
+      position: absolute;
+      left: 5px;
+      height: 1.5px;
+      background: var(--t2);
+      border-radius: 2px;
+      transition: transform .32s cubic-bezier(0.4, 0, 0.2, 1), opacity .25s ease, width .25s ease;
+    }
 
-  background: none;
-  border: none;
+    .hbg-line:nth-child(1) { width: 22px; top: 9px; }
+    .hbg-line:nth-child(2) { width: 14px; top: 15px; background: var(--purple); }
+    .hbg-line:nth-child(3) { width: 22px; top: 21px; }
 
-  padding: 6px;
+    .hbg.open .hbg-line:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .hbg.open .hbg-line:nth-child(2) { opacity: 0; transform: translateX(8px); }
+    .hbg.open .hbg-line:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
 
-  position: relative;
+    @media(max-width:768px) {
+      .nw { padding: 0 20px; }
+      .nlinks {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 18px;
+        background: rgba(248, 250, 252, 0.92);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, .08);
+        animation: navDrop .25s ease;
+      }
+      .nlinks.open { display: flex; }
+      .nl { width: 100%; justify-content: flex-start; padding: 12px 14px; }
+      .ncv { margin-left: 0; margin-top: 8px; width: 100%; }
+      .hbg { display: flex; }
+    }
 
-  width: 32px;
-  height: 32px;
-}
-
-.hbg-line {
-  position: absolute;
-
-  left: 5px;
-
-  height: 1.5px;
-
-  background: var(--t2);
-
-  border-radius: 2px;
-
-  transition:
-    transform .32s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity .25s ease,
-    width .25s ease;
-}
-
-.hbg-line:nth-child(1) {
-  width: 22px;
-  top: 9px;
-}
-
-.hbg-line:nth-child(2) {
-  width: 14px;
-  top: 15px;
-
-  background: var(--purple);
-}
-
-.hbg-line:nth-child(3) {
-  width: 22px;
-  top: 21px;
-}
-
-/* Open Animation */
-
-.hbg.open .hbg-line:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
-}
-
-.hbg.open .hbg-line:nth-child(2) {
-  opacity: 0;
-  transform: translateX(8px);
-}
-
-.hbg.open .hbg-line:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
-}
-
-/* ═══════════════════════════════════════
-   MOBILE NAV
-═══════════════════════════════════════ */
-
-@media(max-width:768px) {
-
-  .nw {
-    padding: 0 20px;
-  }
-
-  .nlinks {
-    display: none;
-
-    position: absolute;
-
-    top: 64px;
-    left: 16px;
-    right: 16px;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 6px;
-
-    padding: 18px;
-
-    background:
-      rgba(248, 250, 252, 0.92);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border:
-      1px solid rgba(15, 23, 42, 0.06);
-
-    border-radius: 16px;
-
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, .08);
-
-    animation: navDrop .25s ease;
-  }
-
-  .nlinks.open {
-    display: flex;
-  }
-
-  .nl {
-    width: 100%;
-
-    justify-content: flex-start;
-
-    padding: 12px 14px;
-  }
-
-  .ncv {
-    margin-left: 0;
-    margin-top: 8px;
-
-    width: 100%;
-  }
-
-  .hbg {
-    display: flex;
-  }
-}
-
-/* ═══════════════════════════════════════
-   MOBILE NAV ANIMATION
-═══════════════════════════════════════ */
-
-@keyframes navDrop {
-
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+    @keyframes navDrop {
+      from { opacity: 0; transform: translateY(-10px) scale(.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
 
     /* ═══════════════════════════════════════
    PAGE LAYOUT
@@ -583,14 +384,10 @@
     }
 
     @media(max-width:768px) {
-      #pg {
-        padding: 0 20px
-      }
+      #pg { padding: 0 20px }
     }
 
-    section {
-      padding: 104px 0
-    }
+    section { padding: 104px 0 }
 
     .hr {
       border: none;
@@ -640,7 +437,7 @@
     }
 
     /* ═══════════════════════════════════════
-   CARDS — original white style
+   CARDS — refined
 ═══════════════════════════════════════ */
     .card {
       background: var(--card);
@@ -652,7 +449,7 @@
     .card:hover {
       transform: translateY(-4px);
       border-color: var(--purple);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, .06), 0 0 0 1px rgba(124, 58, 237, .08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .04), 0 0 0 1px rgba(124, 58, 237, .08);
     }
 
     /* ═══════════════════════════════════════
@@ -678,10 +475,7 @@
       flex-wrap: wrap;
     }
 
-    .ht {
-      flex: 1;
-      min-width: 280px
-    }
+    .ht { flex: 1; min-width: 280px }
 
     .hg {
       font-family: var(--fm);
@@ -737,7 +531,6 @@
       font-weight: 600
     }
 
-    /* Typewriter */
     .htw-wrap {
       display: flex;
       align-items: center;
@@ -771,18 +564,10 @@
     }
 
     @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: 0
-      }
+      0%, 100% { opacity: 1 }
+      50% { opacity: 0 }
     }
 
-    /* Hero tags */
     .htags {
       display: flex;
       flex-wrap: wrap;
@@ -809,7 +594,6 @@
       background: var(--pur-lt)
     }
 
-    /* Hero buttons */
     .hbtns {
       display: flex;
       flex-wrap: wrap;
@@ -861,7 +645,7 @@
     }
 
     /* ═══════════════════════════════════════
-   PROFILE PHOTO — circular orbital frame
+   PROFILE PHOTO
 ═══════════════════════════════════════ */
     .hphoto {
       flex-shrink: 0;
@@ -869,15 +653,8 @@
       opacity: 0;
     }
 
-    /* Unified Wrapper (This fixed the mobile offset issue) */
-    .photo-wrapper {
-      position: relative;
-      width: 220px;
-      height: 220px;
-      margin: 0 auto;
-    }
+    .photo-wrapper { position: relative; width: 220px; height: 220px; margin: 0 auto; }
 
-    /* The actual image container */
     .photo-circle {
       width: 100%;
       height: 100%;
@@ -889,13 +666,8 @@
       background: #ffffff;
     }
 
-    .photo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Outer orbital ring */
     .orbit-ring {
       position: absolute;
       inset: -20px;
@@ -905,7 +677,6 @@
       pointer-events: none;
     }
 
-    /* Floating dot on the ring */
     .orbit-dot {
       position: absolute;
       width: 10px;
@@ -917,7 +688,6 @@
       box-shadow: 0 0 15px #7c3aed;
     }
 
-    /* Conic gradient spinning border */
     .photo-spin-wrap {
       position: absolute;
       inset: -5px;
@@ -928,7 +698,6 @@
       z-index: 1;
     }
 
-    /* Mask to keep the spin effect only on the border */
     .photo-mask {
       position: absolute;
       inset: 4px;
@@ -936,18 +705,8 @@
       border-radius: 50%;
     }
 
-    /* Animation Keyframes */
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes orbit-rev {
-      to {
-        transform: rotate(-360deg);
-      }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes orbit-rev { to { transform: rotate(-360deg); } }
 
     /* Social bar */
     .hsoc {
@@ -962,18 +721,14 @@
       opacity: 0;
     }
 
-    .hsoc::before,
-    .hsoc::after {
+    .hsoc::before, .hsoc::after {
       content: '';
       display: block;
       width: 1px;
       height: 50px;
       background: linear-gradient(transparent, var(--t3));
     }
-
-    .hsoc::after {
-      background: linear-gradient(var(--t3), transparent)
-    }
+    .hsoc::after { background: linear-gradient(var(--t3), transparent) }
 
     .sl {
       color: var(--t3);
@@ -982,66 +737,24 @@
       transition: color .2s, transform .2s
     }
 
-    .sl:hover {
-      color: var(--purple);
-      transform: translateX(-2px)
-    }
+    .sl:hover { color: var(--purple); transform: translateX(-2px) }
 
     @media (max-width: 900px) {
-      .hi {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 48px;
-      }
-
-      .ht h1 {
-        margin: 0 auto 16px;
-      }
-
-      .h-desc {
-        margin: 0 auto 32px;
-      }
-
-      .hbtns {
-        justify-content: center;
-      }
-
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .n-links {
-        display: none;
-      }
-
-      /* Fixed Mobile Photo Sizing */
-      .photo-wrapper {
-        width: 200px;
-        height: 200px;
-      }
-
-      .orbit-ring {
-        inset: -15px;
-      }
+      .hi { flex-direction: column-reverse; text-align: center; gap: 48px; }
+      .ht h1 { margin: 0 auto 16px; }
+      .h-desc { margin: 0 auto 32px; }
+      .hbtns { justify-content: center; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .n-links { display: none; }
+      .photo-wrapper { width: 200px; height: 200px; }
+      .orbit-ring { inset: -15px; }
     }
 
     @media (max-width: 600px) {
-      .photo-wrapper {
-        width: 160px;
-        height: 160px;
-      }
-
-      .orbit-ring {
-        inset: -12px;
-      }
-
-      .section-head h2 {
-        font-size: 1.75rem;
-      }
+      .photo-wrapper { width: 160px; height: 160px; }
+      .orbit-ring { inset: -12px; }
+      .section-head h2 { font-size: 1.75rem; }
     }
-
-
 
     /* ═══════════════════════════════════════
    ABOUT
@@ -1053,12 +766,7 @@
       align-items: start
     }
 
-    @media(max-width:768px) {
-      .agrid {
-        grid-template-columns: 1fr;
-        gap: 32px
-      }
-    }
+    @media(max-width:768px) { .agrid { grid-template-columns: 1fr; gap: 32px } }
 
     .abody {
       display: flex;
@@ -1069,34 +777,20 @@
       line-height: 1.9
     }
 
-    .abody strong {
-      color: var(--t1);
-      font-weight: 600
-    }
-
+    .abody strong { color: var(--t1); font-weight: 600 }
     .abody a {
       color: var(--purple);
       text-decoration: none;
       border-bottom: 1px solid var(--pur-b);
       transition: border-color .2s
     }
-
-    .abody a:hover {
-      border-color: var(--purple)
-    }
+    .abody a:hover { border-color: var(--purple) }
 
     /* ═══════════════════════════════════════
    RESEARCH FEATURED CARD
 ═══════════════════════════════════════ */
-    .rfeat {
-      padding: 40px 44px
-    }
-
-    @media(max-width:600px) {
-      .rfeat {
-        padding: 24px 20px
-      }
-    }
+    .rfeat { padding: 40px 44px }
+    @media(max-width:600px) { .rfeat { padding: 24px 20px } }
 
     .rfh {
       display: flex;
@@ -1188,41 +882,15 @@
       margin-bottom: 26px;
     }
 
-    @media(max-width:660px) {
-      .rfdrow {
-        grid-template-columns: 1fr
-      }
-    }
+    @media(max-width:660px) { .rfdrow { grid-template-columns: 1fr } }
 
-    .rfdc {
-      padding-right: 26px;
-      border-right: 1px solid var(--cb)
-    }
-
-    .rfdc:nth-child(2) {
-      padding: 0 26px
-    }
-
-    .rfdc:last-child {
-      border-right: none;
-      padding-right: 0;
-      padding-left: 26px
-    }
+    .rfdc { padding-right: 26px; border-right: 1px solid var(--cb) }
+    .rfdc:nth-child(2) { padding: 0 26px }
+    .rfdc:last-child { border-right: none; padding-right: 0; padding-left: 26px }
 
     @media(max-width:660px) {
-      .rfdc {
-        border-right: none !important;
-        padding: 0 !important;
-        border-bottom: 1px solid var(--cb);
-        padding-bottom: 16px !important;
-        margin-bottom: 16px !important
-      }
-
-      .rfdc:last-child {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-        margin-bottom: 0 !important
-      }
+      .rfdc { border-right: none !important; padding: 0 !important; border-bottom: 1px solid var(--cb); padding-bottom: 16px !important; margin-bottom: 16px !important }
+      .rfdc:last-child { border-bottom: none !important; padding-bottom: 0 !important; margin-bottom: 0 !important }
     }
 
     .rfdl {
@@ -1234,26 +902,11 @@
       margin-bottom: 8px
     }
 
-    .rfdt {
-      font-size: 13px;
-      color: var(--t2);
-      line-height: 1.8
-    }
+    .rfdt { font-size: 13px; color: var(--t2); line-height: 1.8 }
 
-    .rffoot {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px
-    }
+    .rffoot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px }
 
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px
-    }
-
+    .chips { display: flex; flex-wrap: wrap; gap: 5px }
     .chip {
       font-family: var(--fm);
       font-size: 10px;
@@ -1265,11 +918,7 @@
       transition: all .2s;
     }
 
-    .chip:hover {
-      color: var(--purple);
-      border-color: var(--pur-b);
-      background: var(--pur-lt)
-    }
+    .chip:hover { color: var(--purple); border-color: var(--pur-b); background: var(--pur-lt) }
 
     .ghl {
       display: inline-flex;
@@ -1286,61 +935,22 @@
       white-space: nowrap;
     }
 
-    .ghl:hover {
-      color: var(--purple);
-      border-color: var(--pur-b);
-      background: var(--pur-lt)
-    }
+    .ghl:hover { color: var(--purple); border-color: var(--pur-b); background: var(--pur-lt) }
 
     /* ═══════════════════════════════════════
    PROJECT CARDS
 ═══════════════════════════════════════ */
-    .pgrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
-      gap: 16px
-    }
+    .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(295px, 1fr)); gap: 16px }
 
-    .pcard {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      cursor: pointer
-    }
+    .pcard { padding: 24px; display: flex; flex-direction: column; cursor: pointer }
 
-    .pct {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 18px
-    }
+    .pct { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px }
+    .ficon { color: var(--purple); opacity: .55; transition: opacity .2s }
+    .card:hover .ficon { opacity: .9 }
 
-    .ficon {
-      color: var(--purple);
-      opacity: .55;
-      transition: opacity .2s
-    }
-
-    .card:hover .ficon {
-      opacity: .9
-    }
-
-    .pac {
-      display: flex;
-      align-items: center;
-      gap: 8px
-    }
-
-    .pah {
-      color: var(--t3);
-      transition: color .2s;
-      display: flex;
-      text-decoration: none
-    }
-
-    .pah:hover {
-      color: var(--purple)
-    }
+    .pac { display: flex; align-items: center; gap: 8px }
+    .pah { color: var(--t3); transition: color .2s; display: flex; text-decoration: none }
+    .pah:hover { color: var(--purple) }
 
     .ptitle {
       font-family: var(--fd);
@@ -1353,46 +963,16 @@
       letter-spacing: -.01em;
     }
 
-    .card:hover .ptitle {
-      color: var(--purple)
-    }
+    .card:hover .ptitle { color: var(--purple) }
 
-    .pdesc {
-      font-size: 13px;
-      color: var(--t2);
-      line-height: 1.8;
-      flex-grow: 1;
-      margin-bottom: 18px
-    }
+    .pdesc { font-size: 13px; color: var(--t2); line-height: 1.8; flex-grow: 1; margin-bottom: 18px }
 
-    .pfoot {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      padding-top: 14px;
-      border-top: 1px solid var(--cb)
-    }
+    .pfoot { display: flex; flex-wrap: wrap; gap: 5px; padding-top: 14px; border-top: 1px solid var(--cb) }
 
     /* ═══════════════════════════════════════
-   SKILLS + EDUCATION
+   SKILLS
 ═══════════════════════════════════════ */
-    .segrid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px
-    }
-
-    @media(max-width:768px) {
-      .segrid {
-        grid-template-columns: 1fr;
-        gap: 56px
-      }
-    }
-
-    .skg {
-      margin-bottom: 24px
-    }
-
+    .skg { margin-bottom: 24px }
     .skgl {
       font-family: var(--fm);
       font-size: 9px;
@@ -1404,12 +984,7 @@
       border-bottom: 1px solid var(--cb);
     }
 
-    .skps {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px
-    }
-
+    .skps { display: flex; flex-wrap: wrap; gap: 7px }
     .skp {
       font-size: 13px;
       color: var(--t1);
@@ -1420,308 +995,122 @@
       transition: all .2s;
     }
 
-    .skp:hover {
-      border-color: var(--pur-b);
-      color: var(--purple);
-      background: var(--pur-lt)
-    }
-
-    .ecard {
-      padding: 24px;
-      margin-bottom: 12px
-    }
-
-    .eper {
-      font-family: var(--fm);
-      font-size: 9.5px;
-      color: var(--t3);
-      letter-spacing: .1em;
-      margin-bottom: 7px
-    }
-
-    .etitle {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--t1);
-      margin-bottom: 3px
-    }
-
-    .esc {
-      font-size: 13px;
-      color: var(--purple);
-      margin-bottom: 12px
-    }
-
-    .edet {
-      font-size: 13px;
-      color: var(--t2);
-      line-height: 1.8
-    }
-
-    /* GPA badge */
-    .egpa {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-family: var(--fm);
-      font-size: 9px;
-      color: var(--purple);
-      background: var(--pur-lt);
-      border: 1px solid var(--pur-b);
-      padding: 3px 10px;
-      border-radius: 100px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
+    .skp:hover { border-color: var(--pur-b); color: var(--purple); background: var(--pur-lt) }
 
     /* ═══════════════════════════════════════
    WRITING
 ═══════════════════════════════════════ */
-
-.wgrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.wcard {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-
-  overflow: hidden;
-
-  position: relative;
-  isolation: isolate;
-}
-/* ───────────────
-   Article Image
-──────────────── */
-.wimg {
-  width: calc(100% + 48px);
-  height: 210px;
-
-  margin: -24px -24px 18px -24px;
-
-  overflow: hidden;
-
-  border-radius: 14px 14px 0 0;
-
-  position: relative;
-
-  border-bottom: 1px solid var(--cb);
-
-  background: #111;
-}
-@media(max-width: 768px) {
-  .wimg {
-    height: 180px;
-  }
-}
-
-.wimg img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  display: block;
-
-  transition:
-    transform .5s ease,
-    filter .4s ease;
-}
-
-/* Elegant Hover */
-.wcard:hover .wimg img {
-  transform: scale(1.04);
-  filter: brightness(1.05);
-}
-
-/* ───────────────
-   Tags
-──────────────── */
-.wtags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  margin-bottom: 14px;
-}
-
-.wtag {
-  font-family: var(--fm);
-  font-size: 9px;
-  color: var(--t3);
-
-  padding: 3px 8px;
-
-  border-radius: 100px;
-  border: 1px solid var(--cb);
-
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-/* ───────────────
-   Title
-──────────────── */
-.wtitle {
-  font-family: var(--fd);
-  font-size: 16px;
-  font-weight: 600;
-
-  color: var(--t1);
-
-  line-height: 1.4;
-
-  margin-bottom: 11px;
-
-  flex-grow: 1;
-
-  letter-spacing: -.01em;
-
-  transition: color .2s;
-}
-
-.card:hover .wtitle {
-  color: var(--purple);
-  word-break: break-word;
-}
-
-/* ───────────────
-   Summary
-──────────────── */
-.wsumm {
-  font-size: 13px;
-  color: var(--t2);
-
-  line-height: 1.8;
-
-  margin-bottom: 18px;
-
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
-}
-
-/* ═══════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════ */
-
-.cgrid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(260px, 1fr));
-
-  gap: 14px;
-
-  width: 100%;
-  max-width: 900px;
-}
-
-.cc {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  padding: 18px;
-
-  background: var(--card);
-
-  border: 1px solid var(--cb);
-  border-radius: 14px;
-
-  text-decoration: none;
-  color: var(--t1);
-
-  transition:
-    border-color .3s,
-    transform .2s,
-    box-shadow .2s;
-
-  min-height: 82px;
-}
-
-.cc:hover {
-  border-color: var(--purple);
-
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 12px 28px rgba(0, 0, 0, .06),
-    0 0 0 1px rgba(124, 58, 237, .08);
-}
-
-.ci {
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: var(--pur-lt);
-
-  border-radius: 10px;
-
-  color: var(--purple);
-
-  flex-shrink: 0;
-}
-
-.clbl {
-  font-family: var(--fm);
-  font-size: 9px;
-
-  color: var(--t3);
-
-  letter-spacing: .12em;
-  text-transform: uppercase;
-
-  margin-bottom: 4px;
-}
-
-.cval {
-  font-size: 13.5px;
-  font-weight: 500;
-
-  color: var(--t1);
-
-  line-height: 1.5;
-
-  word-break: break-word;
-}
-
-/* ───────────────
-   Footer
-──────────────── */
-.wfoot {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding-top: 14px;
-
-  border-top: 1px solid var(--cb);
-}
-
-.wmeta {
-  display: flex;
-  gap: 12px;
-
-  font-family: var(--fm);
-  font-size: 9px;
-
-  color: var(--t3);
-
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
+    .wgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+    .wcard { padding: 24px; display: flex; flex-direction: column; text-decoration: none; overflow: hidden; position: relative; isolation: isolate; }
+
+    .wimg {
+      width: calc(100% + 48px);
+      height: 210px;
+      margin: -24px -24px 18px -24px;
+      overflow: hidden;
+      border-radius: 14px 14px 0 0;
+      position: relative;
+      border-bottom: 1px solid var(--cb);
+      background: #111;
+    }
+
+    @media(max-width: 768px) { .wimg { height: 180px; } }
+
+    .wimg img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease, filter .4s ease; }
+
+    .wcard:hover .wimg img { transform: scale(1.04); filter: brightness(1.05); }
+
+    .wtags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+    .wtag {
+      font-family: var(--fm);
+      font-size: 9px;
+      color: var(--t3);
+      padding: 3px 8px;
+      border-radius: 100px;
+      border: 1px solid var(--cb);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .wtitle {
+      font-family: var(--fd);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--t1);
+      line-height: 1.4;
+      margin-bottom: 11px;
+      flex-grow: 1;
+      letter-spacing: -.01em;
+      transition: color .2s;
+    }
+
+    .card:hover .wtitle { color: var(--purple); word-break: break-word; }
+
+    .wsumm {
+      font-size: 13px;
+      color: var(--t2);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .wfoot { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--cb); }
+    .wmeta { display: flex; gap: 12px; font-family: var(--fm); font-size: 9px; color: var(--t3); letter-spacing: .1em; text-transform: uppercase; }
 
     /* ═══════════════════════════════════════
-   FOOTER
+   CONTACT
+═══════════════════════════════════════ */
+    .cgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; width: 100%; max-width: 900px; }
+
+    .cc {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--cb);
+      border-radius: 14px;
+      text-decoration: none;
+      color: var(--t1);
+      transition: border-color .3s, transform .2s, box-shadow .2s;
+      min-height: 82px;
+    }
+
+    .cc:hover {
+      border-color: var(--purple);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .04), 0 0 0 1px rgba(124, 58, 237, .08);
+    }
+
+    .ci {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pur-lt);
+      border-radius: 10px;
+      color: var(--purple);
+      flex-shrink: 0;
+    }
+
+    .clbl {
+      font-family: var(--fm);
+      font-size: 9px;
+      color: var(--t3);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cval { font-size: 13.5px; font-weight: 500; color: var(--t1); line-height: 1.5; word-break: break-word; }
+
+    /* ═══════════════════════════════════════
+   FOOTER — professional
 ═══════════════════════════════════════ */
     footer {
       position: relative;
@@ -1750,17 +1139,14 @@
     /* ═══════════════════════════════════════
    REVEAL CLASS
 ═══════════════════════════════════════ */
-    .rv {
-      opacity: 0;
-      transform: translateY(24px)
-    }
+    .rv { opacity: 0; transform: translateY(24px) }
   </style>
 </head>
 
 <body>
 
   <div id="progress"></div>
-  <div id="canvas-container"></div>
+  <!-- No more floating words container -->
 
   <!-- ══ NAVBAR ══ -->
   <nav id="nav">
@@ -1772,10 +1158,7 @@
         <a href="#projects" class="nl" data-s="projects"><span class="ni">03.</span>Project</a>
         <a href="#writing" class="nl" data-s="writing"> <span class="ni">04.</span>Writing</a>
         <a href="#contact" class="nl" data-s="contact"> <span class="ni">05.</span>Connect</a>
-        <a href="beyond-the-lab.html" class="nl"
-          style="color:var(--purple);border:1px solid var(--pur-b);border-radius:6px;padding:6px 11px;margin-left:2px;transition:background .2s"
-          onmouseover="this.style.background='var(--pur-lt)'" onmouseout="this.style.background='transparent'">Beyond
-          the Lab ↗</a>
+        <!-- Beyond the Lab removed -->
         <a id="ncv" href="#" target="_blank" class="ncv">CV ↗</a>
       </div>
       <button class="hbg" id="hbg" aria-label="Menu">
@@ -1840,8 +1223,7 @@
           <div class="hsoc">
             <a class="sl" id="gh-l" href="#" target="_blank" title="GitHub">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-                <path
-                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
                 <path d="M9 18c-4.51 2-5-2-7-2" />
               </svg>
             </a>
@@ -1854,16 +1236,13 @@
             </a>
             <a class="sl" id="md-l" href="#" target="_blank" title="Medium">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
+                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
               </svg>
             </a>
           </div>
         </div>
       </div>
     </section>
-
-
 
     <!-- ─ ABOUT ─ -->
     <section id="about">
@@ -1874,42 +1253,12 @@
         </div>
         <div class="abody">
           <p><strong>Prosun Datta</strong> — I work on machine learning systems constrained by physical law.</p>
-<p>My research is oriented toward a specific class of problems — those where purely data-driven methods fail not by degree but by kind. Where the model is statistically competent and physically wrong. Where generalisation under distribution shift, sparse supervision, or extreme conditions requires not more data but deeper structure. I address this through architectures and optimisation frameworks that embed governing equations, conservation laws, and deterministic physical priors directly into the learning system.</p>
-<p>My technical focus spans <strong>physics-informed neural networks</strong>, <strong>PDE-constrained optimisation</strong>, hybrid mechanistic-statistical modelling, and uncertainty quantification in scientific AI. The thread connecting these is a single question I return to repeatedly: under incomplete or imperfect information, what does it take for a computational system to produce reasoning that is not just accurate but physically consistent?</p>
-<p>My interests extend further into numerical physics, stochastic systems, and the intersection of scientific computing with quantum computation — territory I approach not as adjacent fields but as deeper expressions of the same foundational problem.</p>
-<p>All work is developed openly, with rigorous evaluation, reproducible methodology, and full transparency of process.</p>
+          <p>My research is oriented toward a specific class of problems — those where purely data-driven methods fail not by degree but by kind. Where the model is statistically competent and physically wrong. Where generalisation under distribution shift, sparse supervision, or extreme conditions requires not more data but deeper structure. I address this through architectures and optimisation frameworks that embed governing equations, conservation laws, and deterministic physical priors directly into the learning system.</p>
+          <p>My technical focus spans <strong>physics-informed neural networks</strong>, <strong>PDE-constrained optimisation</strong>, hybrid mechanistic-statistical modelling, and uncertainty quantification in scientific AI. The thread connecting these is a single question I return to repeatedly: under incomplete or imperfect information, what does it take for a computational system to produce reasoning that is not just accurate but physically consistent?</p>
+          <p>My interests extend further into numerical physics, stochastic systems, and the intersection of scientific computing with quantum computation — territory I approach not as adjacent fields but as deeper expressions of the same foundational problem.</p>
+          <p>All work is developed openly, with rigorous evaluation, reproducible methodology, and full transparency of process.</p>
         </div>
-
-        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 30px;">
-          <span
-            style="font-family: var(--fm); font-size: 10px; color: var(--t3); text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.8;">
-            Discover the other side
-          </span>
-
-          <a href="beyond-the-lab.html" class="nl" style="
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 10px;
-        background: var(--pur-lt);
-        border: 1px solid var(--pur-b);
-        border-radius: 6px;
-        color: var(--purple);
-        font-family: var(--fm);
-        font-size: 9px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    " onmouseover="this.style.background='rgba(124,58,237,0.12)'; this.style.borderColor='var(--purple)';"
-            onmouseout="this.style.background='var(--pur-lt)'; this.style.borderColor='var(--pur-b)';">
-            Beyond the Lab
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17l9.2-9.2M17 17V7H7" />
-            </svg>
-          </a>
-        </div>
+        <!-- Removed "Beyond the Lab" link -->
       </div>
     </section>
 
@@ -1951,19 +1300,12 @@
 
     <div class="hr"></div>
     
-        <!-- ─ EXPERTISE + EDUCATION ─ -->
+    <!-- ─ SKILLS ─ -->
     <section id="skills">
-      <div class="segrid">
-        <div class="rv">
-          <div class="slbl">Skills</div>
-          <h2 class="st" style="margin-bottom:40px">Expertise</h2>
-          <div id="scon"></div>
-        </div>
-        <div class="rv">
-          <div class="slbl">Education</div>
-          <h2 class="st" style="margin-bottom:40px">Academic</h2>
-          <div id="econ"></div>
-        </div>
+      <div class="rv">
+        <div class="slbl">Skills</div>
+        <h2 class="st" style="margin-bottom:40px">Expertise</h2>
+        <div id="scon"></div>
       </div>
     </section>
 
@@ -1974,8 +1316,7 @@
       <div class="rv" style="margin-bottom:40px">
         <div class="slbl">Connect</div>
         <h2 class="st">Get In Touch</h2>
-        <p class="ssub">Open to research collaborations, open-source contribution, and joint work in PIML and computational physics.
-        </p>
+        <p class="ssub">Open to research collaborations, open-source contribution, and joint work in PIML and computational physics.</p>
       </div>
       <div class="cgrid rv" id="ccon"></div>
     </section>
@@ -1984,16 +1325,13 @@
 
   <footer>
     <div class="fw">
-      <span class="ftext">Prosun Datta &mdash;@prosunkdatta</span>
+      <span class="ftext">© Prosun Datta</span>
       <span class="ftext">prosunkdatta@gmail.com</span>
-      <span class="ftext">Built with curiosity, mathematics, and too much caffeine.</span>
+      <span class="ftext">Designed with precision and open-source tools.</span>
     </div>
   </footer>
 
   <script>
-    /* ═══════════════════════════════════════
-       DATA — update this block only
-    ═══════════════════════════════════════ */
     const D = {
       profile: {
         name: "Prosun Datta",
@@ -2027,53 +1365,29 @@
         { area: "Machine Learning", items: ["Physics-Informed Neural Networks", "Multi-task Learning", "Deep Learning", "Statistics", "Linear Algebra"] },
         { area: "Physics", items: ["Newtonian Mechanics", "Thermodynamics", "Electrostatics", "Calculus", "Computational Modelling"] }
       ],
-      education: [
+      writing: [
         {
-          degree: "Higher Secondary Certificate (HSC) — Science",
-          school: "British Bangladesh International School & College",
-          period: "2025 — 2027",
-          gpa: null,
-          detail: "Concentrated in Higher Mathematics and Physics. Conducting independent research in Physics-Informed Neural Networks alongside formal study. Preparing for top R1 university applications in 2027.",
-          status: "ongoing"
+          title: "Gravity, Gradients, and the 2 AM Ghost: Why the Best AI Engineers Stop Coding and Start Seeing",
+          image: "images/article(1).webp",
+          tags: ["Physics", "Machine Learning", "Essay"],
+          summary:"On the moment I stopped treating the loss curve as an optimization problem and started seeing the physics inside it — what physical intuition gives you that pure backpropagation cannot.",
+          date: "March 2026",
+          time: "4 min read",
+          link:"https://prosunkdatta.medium.com/gravity-gradients-and-the-2-am-ghost-why-the-best-ai-engineers-stop-coding-and-start-seeing-86a96c4cbc7d"
         },
         {
-          degree: "Secondary School Certificate (SSC) — Science",
-          school: "British Bangladesh International School & College",
-          period: "2023 — 2025",
-          gpa: "5.00 / 5.00",
-          detail: "Completed with a perfect GPA of 5.00 in the Science stream. Strong foundation in Physics, Higher Mathematics, and Chemistry.",
-          status: "complete"
+          title: "You’re Not Researching. You’re Hiding.",
+          image: "images/article(2).webp",
+          tags: ["Physics", "Machine Learning", "Research", "Essay"],
+          summary: "A raw reflection on ambition, procrastination, and the fear of being ordinary. Through the story of a teenager obsessed with physics-informed machine learning, this essay explores how endless learning can become a way of avoiding the difficult reality of actually building something.",
+          date: "May 2026", 
+          time: "3 min read",
+          link: "https://prosunkdatta.medium.com/youre-not-researching-you-re-hiding-1fc7758c8b40"
         }
       ],
-      writing: [{
-  title: "Gravity, Gradients, and the 2 AM Ghost: Why the Best AI Engineers Stop Coding and Start Seeing",
-  image: "images/article(1).webp",
-  tags: ["Physics", "Machine Learning", "Essay"],
-  summary:"On the moment I stopped treating the loss curve as an optimization problem and started seeing the physics inside it — what physical intuition gives you that pure backpropagation cannot.",
-  date: "March 2026",
-  time: "4 min read",
-  link:"https://prosunkdatta.medium.com/gravity-gradients-and-the-2-am-ghost-why-the-best-ai-engineers-stop-coding-and-start-seeing-86a96c4cbc7d"
-},
-{
-  title: "You’re Not Researching. You’re Hiding.",
-  image: "images/article(2).webp",
-  tags: ["Physics", "Machine Learning", "Research", "Essay"],
-  summary: "A raw reflection on ambition, procrastination, and the fear of being ordinary. Through the story of a teenager obsessed with physics-informed machine learning, this essay explores how endless learning can become a way of avoiding the difficult reality of actually building something.",
-  date: "May 2026", 
-  time: "3 min read",
-  link: "https://prosunkdatta.medium.com/youre-not-researching-you-re-hiding-1fc7758c8b40"
-      }],
-      tw: ["PIML Research", "Scientific Computing", "Connecting Physics with ML", "Computational Programming", "Applied Physics"],
-      floatingWords: [
-        "Machine Learning", "Computational Physics", "Neural Networks", "Python", "PINN", "Optimization",
-        "Linear Algebra", "Calculus", "Scientific Computing", "PINNs", "Deep Learning", "Gradient Descent",
-        "Σ", "∫", "∇", "∂", "ψ", "ℏ", "Δ", "λ", "∞", "∀", "θ", "π"
-      ]
+      tw: ["PIML Research", "Scientific Computing", "Connecting Physics with ML", "Computational Programming", "Applied Physics"]
     };
 
-    /* ═══════════════════════════════════════
-       INJECT STATIC ELEMENTS
-    ═══════════════════════════════════════ */
     function boot() {
       const p = D.profile;
       document.getElementById('pimg').src = p.image;
@@ -2083,9 +1397,6 @@
       document.getElementById('md-l').href = p.medium;
     }
 
-    /* ═══════════════════════════════════════
-       RENDER RESEARCH
-    ═══════════════════════════════════════ */
     function renderR() {
       const r = D.research;
       document.getElementById('rcard').innerHTML = `<div class="rfeat">
@@ -2113,9 +1424,6 @@
   </div>`;
     }
 
-    /* ═══════════════════════════════════════
-       RENDER PROJECTS
-    ═══════════════════════════════════════ */
     function renderP() {
       document.getElementById('pcon').innerHTML = D.projects.map(p => `
     <div class="card pcard" onclick="window.open('${p.link}','_blank')">
@@ -2134,95 +1442,28 @@
     </div>`).join('');
     }
 
-    /* ═══════════════════════════════════════
-       RENDER SKILLS + EDUCATION
-    ═══════════════════════════════════════ */
-    function renderSE() {
+    function renderSkills() {
       document.getElementById('scon').innerHTML = D.skills.map(s => `
     <div class="skg"><div class="skgl">${s.area}</div>
     <div class="skps">${s.items.map(i => `<span class="skp">${i}</span>`).join('')}</div></div>`).join('');
-
-      document.getElementById('econ').innerHTML = D.education.map(e => `
-    <div class="card ecard">
-      <div class="eper">${e.period}</div>
-      ${e.gpa ? `<span class="egpa">GPA ${e.gpa}</span><br>` : ''}
-      <div class="etitle">${e.degree}</div>
-      <div class="esc">${e.school}</div>
-      <div class="edet">${e.detail}</div>
-    </div>`).join('');
     }
 
-    /* ═══════════════════════════════════════
-       RENDER WRITING
-    ═══════════════════════════════════════ */
-function renderW() {
-  document.getElementById('wcon').innerHTML =
-    D.writing.map(w => `
-
-      <a
-        href="${w.link}"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="card wcard"
-      >
-
-        ${w.image ? `
-        <div class="wimg">
-          <img
-            src="${w.image}"
-            alt="${w.title}"
-            loading="lazy"
-            decoding="async"
-          >
-        </div>
-        ` : ''}
-
-        <div class="wtags">
-          ${w.tags.map(t =>
-            `<span class="wtag">${t}</span>`
-          ).join('')}
-        </div>
-
-        <div class="wtitle">
-          ${w.title}
-        </div>
-
-        <div class="wsumm">
-          ${w.summary}
-        </div>
-
+    function renderW() {
+      document.getElementById('wcon').innerHTML = D.writing.map(w => `
+      <a href="${w.link}" target="_blank" rel="noopener noreferrer" class="card wcard">
+        ${w.image ? `<div class="wimg"><img src="${w.image}" alt="${w.title}" loading="lazy" decoding="async"></div>` : ''}
+        <div class="wtags">${w.tags.map(t => `<span class="wtag">${t}</span>`).join('')}</div>
+        <div class="wtitle">${w.title}</div>
+        <div class="wsumm">${w.summary}</div>
         <div class="wfoot">
-
-          <div class="wmeta">
-            <span>${w.date}</span>
-
-            ${w.time
-              ? `<span>${w.time}</span>`
-              : ''
-            }
-          </div>
-
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#7c3aed"
-            stroke-width="2"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
+          <div class="wmeta"><span>${w.date}</span>${w.time ? `<span>${w.time}</span>` : ''}</div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
           </svg>
-
         </div>
+      </a>`).join('');
+    }
 
-      </a>
-
-    `).join('');
-}
-    /* ═══════════════════════════════════════
-       RENDER CONTACT
-    ═══════════════════════════════════════ */
     function renderC() {
       const p = D.profile;
       const lnks = [
@@ -2242,54 +1483,6 @@ function renderW() {
     }
 
     /* ═══════════════════════════════════════
-       FLOATING WORDS — exact original logic
-    ═══════════════════════════════════════ */
-    function initFloatingWords() {
-      const container = document.getElementById('canvas-container');
-      const words = D.floatingWords;
-      const numWords = 35;
-      for (let i = 0; i < numWords; i++) {
-        const el = document.createElement('div');
-        el.className = 'floating-word';
-        el.innerText = words[Math.floor(Math.random() * words.length)];
-        const startX = Math.random() * window.innerWidth;
-        const startY = Math.random() * window.innerHeight;
-        const fontSize = 10 + Math.random() * 30;
-        const depth = Math.random();
-        el.style.left = `${startX}px`;
-        el.style.top = `${startY}px`;
-        el.style.fontSize = `${fontSize}px`;
-        el.style.filter = `blur(${(1 - depth) * 3}px)`;
-        const baseOpacity = 0.02 + (depth * 0.04);
-        el.style.opacity = baseOpacity;
-        el.dataset.baseOpacity = baseOpacity;
-        el.dataset.depth = depth;
-        container.appendChild(el);
-        animateWord(el);
-      }
-    }
-    function animateWord(el) {
-      const depth = parseFloat(el.dataset.depth);
-      const speedFactor = 0.5 + depth;
-      const duration = (40 + Math.random() * 60) / speedFactor;
-      const moveX = (Math.random() > .5 ? 1 : -1) * (100 + Math.random() * 400);
-      const moveY = (Math.random() > .5 ? 1 : -1) * (50 + Math.random() * 200);
-      const rotation = -15 + Math.random() * 30;
-      gsap.to(el, {
-        x: `+=${moveX}`, y: `+=${moveY}`, rotation: rotation, duration: duration, ease: "none",
-        onComplete: () => {
-          gsap.to(el, {
-            opacity: 0, duration: 3, onComplete: () => {
-              el.style.left = `${Math.random() * window.innerWidth}px`;
-              el.style.top = `${Math.random() * window.innerHeight}px`;
-              gsap.set(el, { x: 0, y: 0, rotation: 0 });
-              gsap.to(el, { opacity: el.dataset.baseOpacity, duration: 3, onComplete: () => animateWord(el) });
-            }
-          });
-        }
-      });
-    }
-    /* ═══════════════════════════════════════
        TYPEWRITER
     ═══════════════════════════════════════ */
     function initTW() {
@@ -2304,9 +1497,6 @@ function renderW() {
       tick();
     }
 
-    /* ═══════════════════════════════════════
-       PROGRESS BAR
-    ═══════════════════════════════════════ */
     function initProgress() {
       const bar = document.getElementById('progress');
       window.addEventListener('scroll', () => {
@@ -2315,9 +1505,6 @@ function renderW() {
       });
     }
 
-    /* ═══════════════════════════════════════
-       NAV: solid state + active section
-    ═══════════════════════════════════════ */
     function initNav() {
       const nav = document.getElementById('nav');
       const links = document.querySelectorAll('.nl[data-s]');
@@ -2342,52 +1529,22 @@ function renderW() {
       }));
     }
 
-    /* ═══════════════════════════════════════
-       GSAP SCROLL ANIMATIONS
-    ═══════════════════════════════════════ */
     function initAnim() {
       gsap.registerPlugin(ScrollTrigger);
-      /* Hero stagger */
       gsap.fromTo('#hero .rv', { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out', stagger: .16, delay: .18 });
-      /* All other .rv on scroll */
       document.querySelectorAll('.rv:not(#hero .rv)').forEach(el => {
         gsap.fromTo(el, { y: 28, opacity: 0 }, {
           y: 0, opacity: 1, duration: .9, ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 88%' }
         });
       });
-      /* Count-up stats */
-      document.querySelectorAll('.sn[data-t]').forEach(el => {
-        const t = +el.dataset.t;
-        ScrollTrigger.create({
-          trigger: el, start: 'top 92%', once: true,
-          onEnter: () => { let c = 0; (function s() { c++; el.textContent = c; if (c < t) setTimeout(s, 190); })(); }
-        });
-      });
-      /* Floating words parallax — original */
-      gsap.to('#canvas-container', {
-        yPercent: 15, ease: "none",
-        scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: 1 }
-      });
     }
 
-    /* ═══════════════════════════════════════
-       BOOT
-    ═══════════════════════════════════════ */
     document.addEventListener('DOMContentLoaded', () => {
-      boot(); renderR(); renderP(); renderSE(); renderW(); renderC();
-      initFloatingWords(); initTW(); initProgress(); initNav();
+      boot(); renderR(); renderP(); renderSkills(); renderW(); renderC();
+      initTW(); initProgress(); initNav();
       requestAnimationFrame(initAnim);
-      /* Resize handler for floating words */
-      let rt;
-      window.addEventListener('resize', () => {
-        clearTimeout(rt); rt = setTimeout(() => {
-          document.getElementById('canvas-container').innerHTML = '';
-          initFloatingWords();
-        }, 500);
-      });
     });
   </script>
 </body>
-
 </html>
